@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Resmi Kelas TI 2026 - Semester 1</title>
+    <style>
+      /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #0f172a; /* Dark Navy Background */
+        color: #f8fafc;
+        line-height: 1.6;
+        min-height: 100vh;
+        padding-bottom: 2rem;
+      }
+
+      /* ==========================================================================
+       NAVBAR
+       ========================================================================== */
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background-color: rgba(15, 23, 42, 0.9);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #1e293b;
+      }
+
+      .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .brand-logo {
+        width: 38px;
+        height: 38px;
+        background-color: #4f46e5;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+      }
+
+      .brand-title {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #f8fafc;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-link {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .nav-link:hover {
+        color: #818cf8;
+      }
+
+      /* ==========================================================================
+       HERO & LAYOUT CONTAINER
+       ========================================================================== */
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem;
+      }
+
+      .hero-card {
+        background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        margin-bottom: 3rem;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        background-color: rgba(99, 102, 241, 0.15);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        color: #818cf8;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border-radius: 999px;
+        margin-bottom: 1rem;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      .hero-desc {
+        color: #94a3b8;
+        font-size: 1rem;
+        max-width: 600px;
+        margin-bottom: 1.75rem;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        padding: 0.7rem 1.4rem;
+        background-color: #4f46e5;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        transition: all 0.2s;
+      }
+
+      .btn-primary:hover {
+        background-color: #4338ca;
+      }
+
+      .btn-secondary {
+        padding: 0.7rem 1.4rem;
+        background-color: #1e293b;
+        color: #e2e8f0;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid #334155;
+        border-radius: 10px;
+        transition: all 0.2s;
+      }
+
+      .btn-secondary:hover {
+        background-color: #334155;
+      }
+
+      /* ==========================================================================
+       SECTION HEADERS
+       ========================================================================== */
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .section-subtitle {
+        color: #94a3b8;
+        font-size: 0.85rem;
+      }
+
+      /* ==========================================================================
+       JADWAL TAB SYSTEM
+       ========================================================================== */
+      .tab-container {
+        display: flex;
+        background-color: #1e293b;
+        padding: 0.3rem;
+        border-radius: 12px;
+        border: 1px solid #334155;
+        overflow-x: auto;
+        max-width: 100%;
+      }
+
+      .tab-btn {
+        padding: 0.45rem 1rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        background: none;
+        border: none;
+        color: #94a3b8;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.2s;
+      }
+
+      .tab-btn.active {
+        background-color: #4f46e5;
+        color: #ffffff;
+      }
+
+      .tab-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .tab-content.hidden {
+        display: none !important;
+      }
+
+      .jadwal-card {
+        background-color: rgba(30, 41, 59, 0.5);
+        border: 1px solid #334155;
+        border-radius: 14px;
+        padding: 1.25rem;
+      }
+
+      .jadwal-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+      }
+
+      .time-tag {
+        padding: 0.2rem 0.6rem;
+        background-color: rgba(99, 102, 241, 0.15);
+        color: #818cf8;
+        font-size: 0.75rem;
+        font-weight: 700;
+        border-radius: 6px;
+        border: 1px solid rgba(99, 102, 241, 0.3);
+      }
+
+      .room-tag {
+        font-size: 0.75rem;
+        color: #94a3b8;
+        background-color: #0f172a;
+        padding: 0.2rem 0.5rem;
+        border-radius: 6px;
+        border: 1px solid #334155;
+      }
+
+      .matkul-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+
+      .dosen-name {
+        color: #94a3b8;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .status-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.2rem 0.6rem;
+        border-radius: 6px;
+        background-color: rgba(245, 158, 11, 0.15);
+        color: #fbbf24;
+        border: 1px solid rgba(245, 158, 11, 0.3);
+      }
+
+      .free-day {
+        text-align: center;
+        padding: 2.5rem 1rem;
+        background-color: rgba(30, 41, 59, 0.2);
+        border: 1px dashed #334155;
+        border-radius: 14px;
+        grid-column: 1 / -1;
+      }
+
+      /* ==========================================================================
+       MAHASISWA SECTION (31 ANGGOTA)
+       ========================================================================== */
+      .search-input {
+        width: 100%;
+        max-width: 300px;
+        background-color: #1e293b;
+        border: 1px solid #334155;
+        color: #f8fafc;
+        border-radius: 10px;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        outline: none;
+      }
+
+      .search-input:focus {
+        border-color: #6366f1;
+      }
+
+      .mahasiswa-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+      }
+
+      .mhs-card {
+        background-color: rgba(30, 41, 59, 0.5);
+        border: 1px solid #334155;
+        border-radius: 14px;
+        padding: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+      }
+
+      .mhs-card:hover {
+        transform: translateY(-2px);
+        border-color: #475569;
+        background-color: rgba(30, 41, 59, 0.8);
+      }
+
+      .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #475569, #334155);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #ffffff;
+        flex-shrink: 0;
+      }
+
+      .mhs-role {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.5rem;
+        background-color: rgba(148, 163, 184, 0.15);
+        color: #94a3b8;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: 700;
+        display: inline-block;
+      }
+
+      .mhs-name {
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-top: 0.2rem;
+        color: #f8fafc;
+      }
+
+      .mhs-nim {
+        color: #94a3b8;
+        font-size: 0.75rem;
+        font-family: monospace;
+      }
+
+      /* Warna Khas Jabatan Pengurus */
+      .role-ketua {
+        background-color: rgba(99, 102, 241, 0.2);
+        color: #a5b4fc;
+      }
+      .role-wakil {
+        background-color: rgba(59, 130, 246, 0.2);
+        color: #93c5fd;
+      }
+      .role-sekertaris {
+        background-color: rgba(16, 185, 129, 0.2);
+        color: #6ee7b7;
+      }
+      .role-bendahara {
+        background-color: rgba(245, 158, 11, 0.2);
+        color: #fde047;
+      }
+      .role-sipen {
+        background-color: rgba(236, 72, 153, 0.2);
+        color: #f472b6;
+      }
+
+      /* FOOTER */
+      .footer {
+        border-top: 1px solid #1e293b;
+        padding: 2rem 1rem;
+        text-align: center;
+        color: #64748b;
+        font-size: 0.8rem;
+        margin-top: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="brand">
+          <div class="brand-logo">TI</div>
+          <span class="brand-title">Teknik Informatika 2026 - Kelas A</span>
+        </div>
+        <div class="nav-links">
+          <a href="#jadwal" class="nav-link">Jadwal</a>
+          <a href="#mahasiswa" class="nav-link">Mahasiswa</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTAINER UTAMA -->
+    <main class="container">
+      <!-- HERO HEADER -->
+      <section class="hero-card">
+        <span class="badge">👋 Portal Resmi Kelas A</span>
+        <h1 class="hero-title">Jadwal Perkuliahan & Data Mahasiswa Kelas A</h1>
+        <p class="hero-desc">
+          Akses cepat jadwal kuliah Semester 1, informasi dosen pengampu, ruang
+          kelas, serta kontak lengkap 31 mahasiswa Teknik Informatika kelas A.
+        </p>
+        <div class="btn-group">
+          <a href="#jadwal" class="btn-primary">Lihat Jadwal Kuliah</a>
+          <a href="#mahasiswa" class="btn-secondary">Cari Teman Kelas</a>
+        </div>
+      </section>
+
+      <!-- SECTION JADWAL KULIAH -->
+      <section id="jadwal">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Jadwal Mata Kuliah</h2>
+            <p class="section-subtitle">Semester 1 - Kelas A</p>
+          </div>
+
+          <!-- Tab Tombol Hari -->
+          <div class="tab-container">
+            <button
+              onclick="switchTab('senin')"
+              id="tab-senin"
+              class="tab-btn active"
+            >
+              Senin
+            </button>
+            <button
+              onclick="switchTab('selasa')"
+              id="tab-selasa"
+              class="tab-btn"
+            >
+              Selasa
+            </button>
+            <button onclick="switchTab('rabu')" id="tab-rabu" class="tab-btn">
+              Rabu
+            </button>
+            <button onclick="switchTab('kamis')" id="tab-kamis" class="tab-btn">
+              Kamis
+            </button>
+            <button onclick="switchTab('jumat')" id="tab-jumat" class="tab-btn">
+              Jum'at
+            </button>
+            <button onclick="switchTab('sabtu')" id="tab-sabtu" class="tab-btn">
+              Sabtu
+            </button>
+            <button
+              onclick="switchTab('minggu')"
+              id="tab-minggu"
+              class="tab-btn"
+            >
+              Minggu
+            </button>
+          </div>
+        </div>
+
+        <!-- KONTEN JADWAL HARI -->
+
+        <!-- SENIN -->
+        <div id="content-senin" class="tab-content">
+          <div class="jadwal-card">
+            <div class="jadwal-meta">
+              <span class="time-tag">Pukul 08.00 - 10.30 WIB</span>
+              <span class="room-tag">Ruang L2-R2</span>
+            </div>
+            <h3 class="matkul-title">Grafik Komputer (3 SKS)</h3>
+            <p class="dosen-name">Dosen: Dita Septasari, M.Kom.</p>
+          </div>
+        </div>
+
+        <!-- SELASA -->
+        <div id="content-selasa" class="tab-content hidden">
+          <div class="jadwal-card">
+            <div class="jadwal-meta">
+              <span class="time-tag">Pukul 08.00 - 09.40 WIB</span>
+              <span class="room-tag">Ruang L1-R1</span>
+            </div>
+            <h3 class="matkul-title">Bahasa Indonesia (2 SKS)</h3>
+            <p class="dosen-name">Dosen: Siti Sa'idah, M.Pd.</p>
+          </div>
+
+          <div class="jadwal-card">
+            <div class="jadwal-meta">
+              <span class="time-tag">Pukul 10.00 - 11.40 WIB</span>
+              <span class="room-tag">Ruang L3-R3-Multimedia</span>
+            </div>
+            <h3 class="matkul-title">Agama (2 SKS)</h3>
+            <p class="dosen-name">Dosen: Amir Syaifurrohman, S.Ag., M.Pd.</p>
+            <span class="status-badge">👥 Kelas Gabungan: A, C</span>
+          </div>
+        </div>
+
+        <!-- RABU -->
+        <div id="content-rabu" class="tab-content hidden">
+          <div class="jadwal-card free-day">
+            <h3 class="matkul-title">🎉 Kosong / Free / Libur</h3>
+            <p class="dosen-name">Tidak ada jadwal perkuliahan di hari Rabu.</p>
+          </div>
+        </div>
+
+        <!-- KAMIS -->
+        <div id="content-kamis" class="tab-content hidden">
+          <div class="jadwal-card">
+            <div class="jadwal-meta">
+              <span class="time-tag">Pukul 08.00 - 11.20 WIB</span>
+              <span class="room-tag">Ruang L3-L4-Lab Computer</span>
+            </div>
+            <h3 class="matkul-title">Dasar Pemrograman (4 SKS)</h3>
+            <p class="dosen-name">Dosen: Nur Aminudin, S.Kom., MTI.</p>
+          </div>
+        </div>
+
+        <!-- JUM'AT -->
+        <div id="content-jumat" class="tab-content hidden">
+          <div class="jadwal-card">
+            <div class="jadwal-meta">
+              <span class="time-tag">Pukul 08.00 - 09.40 WIB</span>
+              <span class="room-tag">Ruang L1-R1</span>
+            </div>
+            <h3 class="matkul-title">Pengantar Pemrograman Sistem (2 SKS)</h3>
+            <p class="dosen-name">Dosen: Dwi Yana Ayu Andini, MTI.</p>
+          </div>
+
+          <div class="jadwal-card">
+            <div class="jadwal-meta">
+              <span class="time-tag">Pukul 10.00 - 11.40 WIB</span>
+              <span class="room-tag">Ruang L1-R1</span>
+            </div>
+            <h3 class="matkul-title">Kalkulus I (2 SKS)</h3>
+            <p class="dosen-name">Dosen: Hafsah Mukaromah, M.Kom.</p>
+          </div>
+
+          <div class="jadwal-card">
+            <div class="jadwal-meta">
+              <span class="time-tag">Pukul 13.00 - 14.40 WIB</span>
+              <span class="room-tag">Ruang L2-R1</span>
+            </div>
+            <h3 class="matkul-title">Akhlaqul Karimah I (2 SKS)</h3>
+            <p class="dosen-name">Dosen: Indel, S.Sos., M.Pd.</p>
+          </div>
+        </div>
+
+        <!-- SABTU -->
+        <div id="content-sabtu" class="tab-content hidden">
+          <div class="jadwal-card">
+            <div class="jadwal-meta">
+              <span class="time-tag">Pukul 16.00 - 17.40 WIB</span>
+              <span class="room-tag">💻 Zoom</span>
+            </div>
+            <h3 class="matkul-title">Pancasila (2 SKS)</h3>
+            <p class="dosen-name">Dosen: Hardo Adriyanto, M.Pd.</p>
+            <span class="status-badge">👥 Kelas Gabungan: A, B, C</span>
+          </div>
+        </div>
+
+        <!-- MINGGU -->
+        <div id="content-minggu" class="tab-content hidden">
+          <div class="jadwal-card free-day">
+            <h3 class="matkul-title">🏖️️ Liburlah pake nanya</h3>
+            <p class="dosen-name">Gunakan hari ini untuk istirahat!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION DIREKTORI MAHASISWA -->
+      <section id="mahasiswa" style="margin-top: 3.5rem">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Anggota Kelas</h2>
+            <p class="section-subtitle">
+              Daftar Mahasiswa Kelas A (Total: 31 Mahasiswa)
+            </p>
+          </div>
+          <input
+            type="text"
+            id="searchInput"
+            onkeyup="filterMahasiswa()"
+            placeholder="Cari nama, NPM, atau jabatan..."
+            class="search-input"
+          />
+        </div>
+
+        <div id="mahasiswaGrid" class="mahasiswa-grid">
+          <!-- 1. Ketua Kelas -->
+          <div class="mhs-card">
+            <div
+              class="avatar"
+              style="background: linear-gradient(135deg, #6366f1, #a855f7)"
+            >
+              FZ
+            </div>
+            <div>
+              <span class="mhs-role role-ketua">Ketua Kelas</span>
+              <h4 class="mhs-name">Faqih Zayyan</h4>
+              <p class="mhs-nim">NPM: 260201049</p>
+            </div>
+          </div>
+
+          <!-- 2. Wakil Ketua -->
+          <div class="mhs-card">
+            <div
+              class="avatar"
+              style="background: linear-gradient(135deg, #3b82f6, #06b6d4)"
+            >
+              BA
+            </div>
+            <div>
+              <span class="mhs-role role-wakil">Wakil Ketua</span>
+              <h4 class="mhs-name">Brian Ajiwidodo</h4>
+              <p class="mhs-nim">NPM: 260201076</p>
+            </div>
+          </div>
+
+          <!-- 3. Sekertaris -->
+          <div class="mhs-card">
+            <div
+              class="avatar"
+              style="background: linear-gradient(135deg, #10b981, #14b8a6)"
+            >
+              FZ
+            </div>
+            <div>
+              <span class="mhs-role role-sekertaris">Sekertaris</span>
+              <h4 class="mhs-name">Fatimatuz Zahra</h4>
+              <p class="mhs-nim">NPM: 260201010</p>
+            </div>
+          </div>
+
+          <!-- 4. Bendahara -->
+          <div class="mhs-card">
+            <div
+              class="avatar"
+              style="background: linear-gradient(135deg, #f59e0b, #d97706)"
+            >
+              NH
+            </div>
+            <div>
+              <span class="mhs-role role-bendahara">Bendahara</span>
+              <h4 class="mhs-name">Nurzikri Hafidz AS</h4>
+              <p class="mhs-nim">NPM: 260201020</p>
+            </div>
+          </div>
+
+          <!-- 5. Sipen -->
+          <div class="mhs-card">
+            <div
+              class="avatar"
+              style="background: linear-gradient(135deg, #ec4899, #8b5cf6)"
+            >
+              AK
+            </div>
+            <div>
+              <span class="mhs-role role-sipen">Sipen</span>
+              <h4 class="mhs-name">Ayu Kharisma Putri</h4>
+              <p class="mhs-nim">NPM: 260201003</p>
+            </div>
+          </div>
+
+          <!-- 6. Baasithu Gilang Firmansyah -->
+          <div class="mhs-card">
+            <div
+              class="avatar"
+              style="background: linear-gradient(135deg, #6366f1, #4338ca)"
+            >
+              BG
+            </div>
+            <div>
+              <span class="mhs-role">Mahasiswa</span>
+              <h4 class="mhs-name">Baasithu Gilang Firmansyah</h4>
+              <p class="mhs-nim">NPM: 260201033</p>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="mhs-card">
+            <div class="avatar">RA</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Rahel Ela Arinda</h4>
+              <p class="mhs-nim">NPM: 260201007</p>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="mhs-card">
+            <div class="avatar">MR</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Muhammad Rakha Surya Putra</h4>
+              <p class="mhs-nim">NPM: 260201009</p>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="mhs-card">
+            <div class="avatar">AP</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Annawaf Pratama</h4>
+              <p class="mhs-nim">NPM: 260201014</p>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="mhs-card">
+            <div class="avatar">MB</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Maulana Bima Ramadanu</h4>
+              <p class="mhs-nim">NPM: 260201018</p>
+            </div>
+          </div>
+
+          <!-- 11 -->
+          <div class="mhs-card">
+            <div class="avatar">NZ</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Naufalen Zahir Falahan</h4>
+              <p class="mhs-nim">NPM: 260201021</p>
+            </div>
+          </div>
+
+          <!-- 12 -->
+          <div class="mhs-card">
+            <div class="avatar">CA</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Candra Ardiansyah</h4>
+              <p class="mhs-nim">NPM: 260201022</p>
+            </div>
+          </div>
+
+          <!-- 13 -->
+          <div class="mhs-card">
+            <div class="avatar">ZN</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Zahra Naysiela</h4>
+              <p class="mhs-nim">NPM: 260201030</p>
+            </div>
+          </div>
+
+          <!-- 14 -->
+          <div class="mhs-card">
+            <div class="avatar">MR</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Muhammad Rizky</h4>
+              <p class="mhs-nim">NPM: 260201032</p>
+            </div>
+          </div>
+
+          <!-- 15 -->
+          <div class="mhs-card">
+            <div class="avatar">DF</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Dias Faqih Zakia</h4>
+              <p class="mhs-nim">NPM: 260201035</p>
+            </div>
+          </div>
+
+          <!-- 16 -->
+          <div class="mhs-card">
+            <div class="avatar">NS</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Nurning Setiasih</h4>
+              <p class="mhs-nim">NPM: 260201041</p>
+            </div>
+          </div>
+
+          <!-- 17 -->
+          <div class="mhs-card">
+            <div class="avatar">NM</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Nabil Musyafa</h4>
+              <p class="mhs-nim">NPM: 260201045</p>
+            </div>
+          </div>
+
+          <!-- 18 -->
+          <div class="mhs-card">
+            <div class="avatar">PM</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Pandji Maulana Mukti</h4>
+              <p class="mhs-nim">NPM: 260201047</p>
+            </div>
+          </div>
+
+          <!-- 19 -->
+          <div class="mhs-card">
+            <div class="avatar">VA</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Vicky Andrean</h4>
+              <p class="mhs-nim">NPM: 260201052</p>
+            </div>
+          </div>
+
+          <!-- 20 -->
+          <div class="mhs-card">
+            <div class="avatar">AM</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Azis Mustolih</h4>
+              <p class="mhs-nim">NPM: 260201057</p>
+            </div>
+          </div>
+
+          <!-- 21 -->
+          <div class="mhs-card">
+            <div class="avatar">RZ</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Romeo Zein Sabil</h4>
+              <p class="mhs-nim">NPM: 260201063</p>
+            </div>
+          </div>
+
+          <!-- 22 -->
+          <div class="mhs-card">
+            <div class="avatar">FS</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Fitri Sholehatul Aulya</h4>
+              <p class="mhs-nim">NPM: 260201069</p>
+            </div>
+          </div>
+
+          <!-- 23 -->
+          <div class="mhs-card">
+            <div class="avatar">ND</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Nadila Dwi Driani</h4>
+              <p class="mhs-nim">NPM: 260201070</p>
+            </div>
+          </div>
+
+          <!-- 24 -->
+          <div class="mhs-card">
+            <div class="avatar">AG</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Aldi Galih Saputra</h4>
+              <p class="mhs-nim">NPM: 260201071</p>
+            </div>
+          </div>
+
+          <!-- 25 -->
+          <div class="mhs-card">
+            <div class="avatar">NA</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Nur Azizah Listiani</h4>
+              <p class="mhs-nim">NPM: 260201072</p>
+            </div>
+          </div>
+
+          <!-- 26 -->
+          <div class="mhs-card">
+            <div class="avatar">FA</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Fahri Ahmad Syafiq</h4>
+              <p class="mhs-nim">NPM: 260201074</p>
+            </div>
+          </div>
+
+          <!-- 27 -->
+          <div class="mhs-card">
+            <div class="avatar">RM</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Rahmat Muarif</h4>
+              <p class="mhs-nim">NPM: 260201077</p>
+            </div>
+          </div>
+
+          <!-- 28 -->
+          <div class="mhs-card">
+            <div class="avatar">AD</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Ali Dwi Laksha</h4>
+              <p class="mhs-nim">NPM: 260201001P</p>
+            </div>
+          </div>
+
+          <!-- 29 -->
+          <div class="mhs-card">
+            <div class="avatar">AF</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Achmadz Fauzan</h4>
+              <p class="mhs-nim">NPM: 260201002P</p>
+            </div>
+          </div>
+
+          <!-- 30 -->
+          <div class="mhs-card">
+            <div class="avatar">SA</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Syifa Azahra</h4>
+              <p class="mhs-nim">NPM: 260201083</p>
+            </div>
+          </div>
+
+          <!-- 31 -->
+          <div class="mhs-card">
+            <div class="avatar">IB</div>
+            <div>
+              <span class="mhs-role">Anggota</span>
+              <h4 class="mhs-name">Isna Barrah Rizki</h4>
+              <p class="mhs-nim">NPM: 260201087</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2026 Kelas A - Teknik Informatika. All rights reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT UNTUK TAB JADWAL & PENCARIAN -->
+    <script>
+      function switchTab(day) {
+        // Sembunyikan semua konten tab
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((el) => el.classList.add("hidden"));
+        // Nonaktifkan semua tombol tab
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((btn) => btn.classList.remove("active"));
+
+        // Tampilkan konten tab yang diklik & aktifkan tombolnya
+        document.getElementById(`content-${day}`).classList.remove("hidden");
+        document.getElementById(`tab-${day}`).classList.add("active");
+      }
+
+      function filterMahasiswa() {
+        const input = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const cards = document.querySelectorAll(".mhs-card");
+
+        cards.forEach((card) => {
+          const text = card.innerText.toLowerCase();
+          card.style.display = text.includes(input) ? "flex" : "none";
+        });
+      }
+    </script>
+  </body>
+</html>
